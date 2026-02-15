@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control de Gastos Mensuales</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card">
+        <h1>Control de Gastos Mensuales</h1>
+        <p class="subtitle">Organiza tu dinero de forma fácil y clara.</p>
+
+        <form id="budgetForm" class="form" novalidate>
+          <label for="income">Ingresos mensuales (MXN)</label>
+          <input
+            id="income"
+            name="income"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="Ej. 18000"
+            required
+          />
+
+          <label for="expenses">Egresos mensuales (MXN)</label>
+          <input
+            id="expenses"
+            name="expenses"
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="Ej. 9500"
+            required
+          />
+
+          <button type="submit">Calcular</button>
+        </form>
+      </section>
+
+      <section id="resultCard" class="card result hidden" aria-live="polite">
+        <h2>Resultado del mes</h2>
+        <div class="grid">
+          <article>
+            <h3>Total para metas</h3>
+            <p id="reserveAmount">$0.00</p>
+            <small id="ruleText"></small>
+          </article>
+          <article>
+            <h3>Educación</h3>
+            <p id="educationAmount">$0.00</p>
+          </article>
+          <article>
+            <h3>Emergencias</h3>
+            <p id="emergencyAmount">$0.00</p>
+          </article>
+          <article>
+            <h3>Inversiones</h3>
+            <p id="investmentAmount">$0.00</p>
+          </article>
+          <article class="balance">
+            <h3>Balance final</h3>
+            <p id="balanceAmount">$0.00</p>
+            <small id="balanceState"></small>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
